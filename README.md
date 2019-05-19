@@ -61,3 +61,19 @@ and visiting http://localhost:8000. You should see {"message":"Welcome to the be
         "todoItems": []
     }
 ]
+
+
+
+File structure
+============================
+    .
+    ├── ...
+    ├── server               
+    │   ├── config          # config
+    │   ├── controller      # Controller
+    │   └── migration       # migration
+    │   └── models          # model
+    │       └── index.js    
+    │       └── todo.js    
+    │       └── todoitem.js    
+    └── ...
