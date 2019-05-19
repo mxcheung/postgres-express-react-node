@@ -11,3 +11,53 @@ https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
 https://dba.stackexchange.com/questions/83984/connect-to-postgresql-server-fatal-no-pg-hba-conf-entry-for-host
 
 http://docs.sequelizejs.com/manual/getting-started.html#installing
+
+
+$ npm i -D nodemon
+
+
+npm run start:dev
+
+and visiting http://localhost:8000. You should see {"message":"Welcome to the beginning of nothingness."}
+
+
+ docker build -t mxcheung/postgres-express-react-node-tutorial_web .
+
+ docker run -p 8000:8000 -d mxcheung/postgres-express-react-node-tutorial_web
+
+ http://localhost:8000/api/todos
+
+
+ [
+    {
+        "id": 3,
+        "title": "first-todo",
+        "createdAt": "2019-05-18T04:59:11.210Z",
+        "updatedAt": "2019-05-18T04:59:11.210Z",
+        "todoItems": [
+            {
+                "id": 4,
+                "content": "first-todo item, inside first todo",
+                "complete": false,
+                "createdAt": "2019-05-18T04:59:22.174Z",
+                "updatedAt": "2019-05-18T04:59:22.174Z",
+                "todoId": 3
+            },
+            {
+                "id": 5,
+                "content": "second-todo item, inside first todo",
+                "complete": false,
+                "createdAt": "2019-05-18T13:21:56.774Z",
+                "updatedAt": "2019-05-18T13:21:56.774Z",
+                "todoId": 3
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "title": "first-todo-get-mlik",
+        "createdAt": "2019-05-18T13:20:57.112Z",
+        "updatedAt": "2019-05-18T13:20:57.112Z",
+        "todoItems": []
+    }
+]
