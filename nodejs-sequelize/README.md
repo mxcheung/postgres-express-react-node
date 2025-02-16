@@ -2,9 +2,15 @@
 
 # Instruction Controller
 invokes service layer
-function getInstructions(req,res)
-    instructionsService
+```
+function getInstructions(req,res) {
+    // Perform query and return results 
+    instructionService
         .findAll(req.queryOptions.where)
+        .then( data => responseHandler.data(req,res, data)))
+        .catch(err => responseHandler.console.error(req,res, err);
+}
+```
      
 # Instruction Service
 invoke sequelizes
@@ -28,8 +34,11 @@ The controller simply calls findAllFiltered from the service and sends the respo
 - add post filter
 
 Why This Approach?
+
 ✅ Separation of Concerns → Filtering is modular, making it easier to test.
+
 ✅ Reusability → filterInstructions can be reused in other parts of the app.
+
 ✅ Unit Testing → Ensures correctness of filtering logic.
 
        
