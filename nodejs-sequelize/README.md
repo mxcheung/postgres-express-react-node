@@ -25,6 +25,12 @@ The controller simply calls findAllFiltered from the service and sends the respo
 
 # How to fix this
 - simply sequelize query 
+- add post filter
+
+Why This Approach?
+✅ Separation of Concerns → Filtering is modular, making it easier to test.
+✅ Reusability → filterInstructions can be reused in other parts of the app.
+✅ Unit Testing → Ensures correctness of filtering logic.
 
        
 
