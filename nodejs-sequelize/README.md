@@ -1,24 +1,41 @@
 # nodejs-service
 
+# Instruction Controller
+invokes service layer
+function getInstructions(req,res)
+    instructionsService
+        .findAll(req.queryOptions.where)
+     
+# Instruction Service
+invoke sequelizes
+const findAll = query => {
+
+    }         
+
+# Summary
+##  Service Layer:
+The instructionService now handles data retrieval and applies the filtering logic internally through the filterInstructions function.
+
+## Controller:
+The controller simply calls findAllFiltered from the service and sends the response, keeping it free of business logic.
+
+# What went wrong
+- sequelize query was too complex
+- where clause include 
+
+# How to fix this
+- simply sequelize query 
+
+       
 
 File structure
 ============================
     .
     ├── ...
     ├── server               
-    │   ├── config          # config
-    │   |   └── config.json    
     │   └── controller      # Controller
-    │       └── index.js    
-    │       └── todo.js    
-    │       └── todoitem.js    
-    │   └── migration       # migration
-    │       └── 20190518041131-create-todo.js    
-    │       └── 20190518041230-create-todo-item.js    
+    │       └── instructions.controller.ts    
+    │   └── service       
+    │       └── instructions.service.js    
     │   └── models          # model
-    │       └── index.js    
-    │       └── todo.js    
-    │       └── todoitem.js    
-    │   └── routes          # route
-    │       └── index.js    
-    └── ...
+    │       └── instruction.model.js    
