@@ -32,11 +32,12 @@ The instructionService now handles data retrieval and applies the filtering logi
 The controller simply calls findAllFiltered from the service and sends the response, keeping it free of business logic.
 
 # What went wrong
-- sequelize query was too complex
-- where clause include 
+- sequelize query was too complex 
+- Filtering in the SQL Query (Sequelize) including  Filtering JSON field directly in SQL
+- When it came to refactoring the SQL will become stored procedure like
 
 # How to fix this
-- simply sequelize query 
+- simply sequelize query remove Filtering JSON field directly in SQL
 - add post filter
 
 Why This Approach?
