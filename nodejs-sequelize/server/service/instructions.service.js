@@ -9,7 +9,7 @@ const findALL = (query, replacements) => {
 };
 
 
-const getInstructionQeury = (param1, param2) => {
+const getInstructionQuery = (param1, param2) => {
     const query = new InstructionsQuery(param1, param2);
     if (param1 == 'xyz') {
         // Filtering JSON field directly in SQL 
