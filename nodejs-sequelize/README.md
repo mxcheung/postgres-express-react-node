@@ -14,9 +14,15 @@ function getInstructions(req,res) {
      
 # Instruction Service
 invoke sequelizes
-const findAll = query => {
-
-    }         
+```
+const findALL = (query, replacements) => {
+    return sequelize.query(query, {
+        raw: true,
+        type: QueryTypes.SELECT,
+        replacements
+     });
+};
+```
 
 # Summary
 ##  Service Layer:
