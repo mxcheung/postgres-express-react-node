@@ -8,17 +8,18 @@ const findALL = (query, replacements) => {
      });
 };
 
-// Filtering function
-function filterInstructions(instructions) {
-    const allowedAccounts = new Set(["x", "y", "z"]);
- 
-    return instructions.filter(instruction => {
-       if (instruction.messageType === "A") {
-          return allowedAccounts.has(instruction.accountId);
-       }
-       return true; // Include all other messageTypes
-    });
- }
+
+const getInstructionQeury = (param1, param2) => {
+    const query = new InstructionsQuery(param1, param2);
+    if (param1 == 'xyz') {
+        // Filtering JSON field directly in SQL 
+        const accountQueryStatement = `instruction_content->>'Account' in (${accounts.map(a => `'${a}'`).join(',')})`
+        query.addWheres([accountQueryStatement]);
+        return query.getQuery()
+    }  else {
+        return query.getQuery()
+    }
+};
 
 module.exports = {
   findAll,
